@@ -39,7 +39,7 @@ const HeroSection = () => {
 
 					<Link
 						to="/about"
-						className="md:w-60 w-48 h-12 rounded-full bg-[#6B6758] md:icon-text-hover flex items-center justify-center gap-2"
+						className="md:w-60 w-48 h-12 rounded-full bg-[#6B6758] md:icon-text-hover icon-text-hover flex items-center justify-center gap-2"
 					>
 						<img className="w-6 h-6" src="./more-down.svg" alt="more-down" />
 						<span className="text-white md:text-lg text-sm">اعرف المزيد</span>
