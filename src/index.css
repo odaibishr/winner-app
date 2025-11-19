@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Cairo", sans-serif;
+	--color-orange: #ecc671;
+	--color-primary: #fedb67;
+}
+
+html {
+	direction: rtl;
+	font-family: var(--font-sans);
+}
+
+@layer utilities {
+	.from-orange {
+		--tw-gradient-from: var(--color-orange);
+		--tw-gradient-to: rgb(255 255 255 / 0);
+		--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+	}
+
+	.to-primary {
+		--tw-gradient-to: var(--color-primary);
+	}
+
+	.bg-orange-primary {
+		background-image: linear-gradient(
+			to bottom right,
+			var(--color-orange),
+			var(--color-primary)
+		);
+	}
+
+	.container {
+		@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+	}
+
+	.icon-text-hover {
+		@apply relative flex items-center justify-center gap-2 cursor-pointer overflow-hidden transition-all duration-500 ease-in-out;
+
+		img {
+			@apply w-6 h-6 transition-all duration-500 ease-in-out;
+		}
+
+		span {
+			@apply text-lg font-medium transition-opacity duration-20 ease-in-out;
+		}
+	}
+
+	.icon-text-hover:hover img {
+		@apply absolute left-1/2 -translate-x-1/2;
+	}
+
+	.icon-text-hover:hover span {
+		@apply opacity-0;
+	}
+}
