@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { menuItems } from "../utils/constant";
+import MenuItem from "./MenuItem";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,17 +11,17 @@ const Navbar = () => {
 	};
 
 	return (
-		<div className="flex justify-between items-center relative">
+		<div className="flex container mt-4 fixed top-0 left-0 right-0 z-50 justify-between items-center">
 			{/* Logo */}
 			<Link
 				to="/"
 				className="w-[120px] h-12 flex items-center gap-2 group transition-all duration-300 ease-in-out cursor-pointer"
 			>
-				<div className="left-[58px] top-0 text-center justify-start text-amber-300 text-2xl md:text-3xl font-medium group-hover:hidden transition-all duration-300 ease-in-out group-hover:translate-x-2">
+				<div className="left-[58px] top-0 text-center justify-start text-amber-300 text-2xl md:text-3xl font-medium md:group-hover:hidden transition-all duration-300 ease-in-out md:group-hover:translate-x-2">
 					Winner
 				</div>
 				<img
-					className="w-8 h-8 md:w-12 md:h-12 rounded-[10px] border border-orange-300 transition-all duration-300 ease-in-out group-hover:translate-x-2"
+					className="w-8 h-8 md:w-12 md:h-12 rounded-[10px] border border-orange-300 transition-all duration-300 ease-in-out md:group-hover:translate-x-2"
 					src="./logo.svg"
 					alt="logo"
 				/>
@@ -29,13 +30,7 @@ const Navbar = () => {
 			{/* Menu Items Desktop */}
 			<div className="hidden lg:flex items-center gap-x-6">
 				{menuItems.map((item, index) => (
-					<Link
-						key={index}
-						to={item.link}
-						className="text-primary text-xl font-medium"
-					>
-						{item.name}
-					</Link>
+					<MenuItem key={index} item={item} />
 				))}
 			</div>
 

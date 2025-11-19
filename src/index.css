@@ -43,7 +43,7 @@ html {
 		}
 
 		span {
-			@apply text-lg font-medium transition-opacity duration-20 ease-in-out;
+			@apply font-medium transition-opacity duration-20 ease-in-out;
 		}
 	}
 
@@ -54,4 +54,13 @@ html {
 	.icon-text-hover:hover span {
 		@apply opacity-0;
 	}
+
+	.gradient-border {
+		border-width: 2px;
+		border-style: solid;
+		border-image: linear-gradient(to right, #fedb67, #000000) 1;
+		border-radius: 50px;
+	}
+
+	
 }
