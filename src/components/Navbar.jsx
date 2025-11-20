@@ -1,19 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { menuItems } from "../utils/constant";
 import MenuItem from "./MenuItem";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
 
 	const toggleMenu = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
 
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > 0) {
+				setIsScrolled(true);
+			} else {
+				setIsScrolled(false);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<div className="flex container mt-4 fixed top-0 left-0 right-0 z-50 justify-between items-center">
-			{/* Logo */}
-			<Link
+		<header className={`w-full fixed top-0 left-0 right-0 z-50 ${isScrolled ? " transition-all duration-300 ease-in-out bg-primary-300/20 backdrop-blur-2xl " : ""}`}>
+			<div
+				className={`flex container p-4  justify-between items-center`}
+			>
+				{/* Logo */}
+				<Link
 				to="/"
 				className="w-[120px] h-12 flex items-center gap-2 group transition-all duration-300 ease-in-out cursor-pointer"
 			>
@@ -142,7 +162,8 @@ const Navbar = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+			</div>
+		</header>
 	);
 };
 
