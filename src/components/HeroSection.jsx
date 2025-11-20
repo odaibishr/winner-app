@@ -4,7 +4,7 @@ import StatsSection from "./StatsSection";
 
 const HeroSection = () => {
 	return (
-		<section className="relative w-full min-h-screen flex flex-col pt-20 pb-10 overflow-hidden">
+		<section className="relative w-full min-h-screen flex flex-col pt-40 md:pt-28 pb-20 md:pb-10 overflow-hidden">
 			{/* Background Image */}
 			<div
 				className="absolute inset-0 bg-cover bg-center"
@@ -49,7 +49,7 @@ const HeroSection = () => {
 					</Link>
 				</div>
 				{/* Stats Inside Background */}
-				<div className="relative z-10 mt-20">
+				<div className="relative z-10 md:mt-20 mt-5">
 					<StatsSection />
 				</div>
 			</div>
