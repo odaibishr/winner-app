@@ -69,4 +69,8 @@ html {
 	.green-gradient {
 		@apply bg-linear-to-b from-[#9E7900] to-[#382B00] shadow-[0px_4px_4px_0px_rgba(255,255,255,0.25)];
 	}
+
+	.gradient-blur {
+		@apply bg-primary-300/20 backdrop-blur-2xl [box-shadow:inset_-15px_15px_15px_rgba(255,255,255,0.20),inset_15px_-15px_15px_rgba(193,166,78,0.20)];
+	}
 }
