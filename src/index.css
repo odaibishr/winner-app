@@ -62,7 +62,11 @@ html {
 		border-radius: 50px;
 	}
 
-	.bg-gradient {	
+	.bg-gradient {
 		@apply bg-[radial-gradient(circle,rgba(254,219,103,0.5)_0%,rgba(158,121,0,0.5)_25%,rgba(0,0,0,0.5)_100%)];
+	}
+
+	.green-gradient {
+		@apply bg-linear-to-b from-[#9E7900] to-[#382B00] shadow-[0px_4px_4px_0px_rgba(255,255,255,0.25)];
 	}
 }
