@@ -32,7 +32,7 @@ const Footer = () => {
 								<Link to="/privacy-policy" className="text-white md:text-lg text-md">
 									سياسة الخصوصية
 								</Link>
-								<Link to="/terms" className="text-white md:text-lg text-md">
+								<Link to="/terms-of-service" className="text-white md:text-lg text-md">
 									شروط الاستخدام
 								</Link>
 								<Link to="/support" className="text-white md:text-lg text-md">
