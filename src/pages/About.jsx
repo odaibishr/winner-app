@@ -2,17 +2,21 @@ import React from "react";
 
 const About = () => {
 	return (
-		<main className="bg-black pt-40 md:pt-20 min-h-screen">
-			<section className="container flex flex-col gap-2">
-				<span className="text-white text-start text-[250px]">قصة</span>
-				<span className="text-primary text-[400px] -translate-y-70">
+		<main className="bg-black pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 min-h-screen">
+			<section className="container mx-auto flex flex-col gap-4 px-4">
+				<span className="text-white font-bold text-6xl sm:text-7xl md:text-[200px] lg:text-[250px] leading-none md:leading-1">
+					قصة
+				</span>
+
+				<span className="text-primary font-extrabold text-7xl sm:text-8xl md:text-[300px] lg:text-[400px] leading-none md:-translate-y-10 lg:-translate-y-10">
 					Winner
 				</span>
-				<div className="w-full flex items-center justify-center text-center text-white text-2xl leading-relaxed -translate-y-90">
-					<p className="md:w-[70%]">
+
+				<div className="w-full flex justify-center text-center">
+					<p className="text-white text-base sm:text-lg md:text-2xl lg:text-2xl leading-relaxed md:w-3/4 lg:w-2/3">
 						بدأت رحلتنا برؤية بسيطة: إنشاء منصة تواصل اجتماعي تجمع بين الأصدقاء
-						والعائلة في بيئة آمنة وممتعة، مع ميزات فريدة تجعل التواصل أكثر تعبيراً
-						وإبداعاً.
+						والعائلة في بيئة آمنة وممتعة، مع ميزات فريدة تجعل التواصل أكثر
+						تعبيراً وإبداعاً.
 					</p>
 				</div>
 			</section>
