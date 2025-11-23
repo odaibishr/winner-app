@@ -29,13 +29,13 @@ const Navbar = () => {
 
 	return (
 		<header
-			className={`w-full fixed top-0 left-0 right-0 z-50 ${
+			className={`w-full container fixed top-0 left-0 right-0 z-50 ${
 				isScrolled
-					? "md:mt-2 container md:rounded-full md:border max-sm:border-b border-primary/50 transition-all duration-300 ease-in-out bg-black backdrop-blur-2xl "
+					? "md:mt-2 md:rounded-full md:border max-sm:border-b border-primary/50 transition-all duration-300 ease-in-out bg-black backdrop-blur-2xl "
 					: ""
 			}`}
 		>
-			<div className={`flex p-4  justify-between items-center`}>
+			<div className={`flex c p-4 justify-between items-center`}>
 				{/* Logo */}
 				<Link
 					to="/"
