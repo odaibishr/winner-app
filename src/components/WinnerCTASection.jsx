@@ -1,5 +1,6 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
+import { Link } from "react-router-dom";
 
 const WinnerCTASection = () => {
 	return (
@@ -8,6 +9,28 @@ const WinnerCTASection = () => {
 				title="حمّل التطبيق الآن"
 				description="انضم إلى ملايين المستخدمين واستمتع بتجربة تواصل اجتماعي فريدة ومميزة"
 			/>
+			<div className="flex flex-col md:flex-row items-center justify-between gap-4">
+				<div className="flex flex-col justify-center items-center gap-4 md:w-[50%]">
+					<Link
+						to="/download"
+						className="border-2 border-primary rounded-full w-[300px] py-2 md:py-3 px-4 md:px-6 flex items-center justify-center gap-2"
+					>
+						<img src="./google-play.svg" alt="download" className="w-6 h-6" />
+						<span className="text-white text-lg md:text-2xl">
+							حمل على Google Play
+						</span>
+					</Link>
+					<Link
+						to="/download"
+						className="border-2 border-primary rounded-full w-[300px] py-2 md:py-3 px-4 md:px-6 flex items-center justify-center gap-2"
+					>
+						<img src="./apple-play.svg" alt="download" className="w-6 h-6" />
+						<span className="text-white text-lg md:text-2xl">
+							حمل على App Store
+						</span>
+					</Link>
+				</div>
+			</div>
 		</section>
 	);
 };
