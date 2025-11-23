@@ -13,19 +13,27 @@ const WinnerCTASection = () => {
 				<div className="flex flex-col justify-center items-end gap-4 md:w-[50%]">
 					<Link
 						to="/download"
-						className="border-2 border-primary rounded-full w-[300px] py-2 md:py-3 px-4 md:px-6 flex items-center justify-center gap-2"
+						className="border-2 border-primary rounded-full w-[300px] py-2 md:py-3 px-4 md:px-6 flex items-center justify-center gap-2 group hover:scale-95 hover:bg-primary transition-all duration-300 ease-in-out"
 					>
-						<img src="./google-play.svg" alt="download" className="w-6 h-6" />
-						<span className="text-white text-lg md:text-2xl">
+						<img
+							src="./google-play.svg"
+							alt="download"
+							className="w-6 h-6 group-hover:invert"
+						/>
+						<span className="group-hover:text-black text-white text-lg md:text-2xl">
 							حمل على Google Play
 						</span>
 					</Link>
 					<Link
 						to="/download"
-						className="border-2 border-primary rounded-full w-[300px] py-2 md:py-3 px-4 md:px-6 flex items-center justify-center gap-2"
+						className="border-2 border-primary rounded-full w-[300px] py-2 md:py-3 px-4 md:px-6 flex items-center justify-center gap-2 group hover:scale-95 hover:bg-primary transition-all duration-300 ease-in-out"
 					>
-						<img src="./apple-play.svg" alt="download" className="w-6 h-6" />
-						<span className="text-white text-lg md:text-2xl">
+						<img
+							src="./apple-play.svg"
+							alt="download"
+							className="w-8 h-8 group-hover:invert"
+						/>
+						<span className="group-hover:text-black text-white text-lg md:text-2xl">
 							حمل على App Store
 						</span>
 					</Link>
