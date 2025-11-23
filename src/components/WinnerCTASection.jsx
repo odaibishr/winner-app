@@ -9,8 +9,8 @@ const WinnerCTASection = () => {
 				title="حمّل التطبيق الآن"
 				description="انضم إلى ملايين المستخدمين واستمتع بتجربة تواصل اجتماعي فريدة ومميزة"
 			/>
-			<div className="flex flex-col md:flex-row items-center justify-between gap-16">
-				<div className="flex flex-col justify-center items-end gap-4 md:w-[50%]">
+			<div className="md:mt-0 mt-6 flex flex-col md:flex-row items-center justify-between gap-16">
+				<div className="md:order-1 order-2 flex flex-col justify-center items-end gap-4 md:w-[50%]">
 					<Link
 						to="/download"
 						className="border-2 border-primary rounded-full w-[300px] py-2 md:py-3 px-4 md:px-6 flex items-center justify-center gap-2 group hover:scale-95 hover:bg-primary transition-all duration-300 ease-in-out"
@@ -38,7 +38,7 @@ const WinnerCTASection = () => {
 						</span>
 					</Link>
 				</div>
-				<div className="flex justify-start items-center md:w-[50%] cursor-pointer hover:scale-120 hover:-translate-x-10 transition-all duration-300 ease-in-out">
+				<div className="md:order-2 order-1 flex justify-start items-center md:w-[50%] cursor-pointer md:hover:scale-120 md:hover:-translate-x-10 transition-all duration-300 ease-in-out">
 					<img src="./code-download.png" alt="winner" />
 				</div>
 			</div>
