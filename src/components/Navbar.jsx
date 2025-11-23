@@ -35,7 +35,7 @@ const Navbar = () => {
 					: ""
 			}`}
 		>
-			<div className={`flex container p-4  justify-between items-center`}>
+			<div className={`flex p-4  justify-between items-center`}>
 				{/* Logo */}
 				<Link
 					to="/"
