@@ -26,7 +26,7 @@ const HeroSection = () => {
 					</span>
 				</div>
 
-				<div className="text-center text-white md:text-2xl text-lg md:w-[70%] w-full mt-7 leading-relaxed">
+				<div className="text-center text-white md:text-2xl text-lg md:w-[50%] w-full mt-7 leading-relaxed">
 					تطبيق التواصل الاجتماعي الأول في المنطقة. تواصل مع الأصدقاء، أرسل
 					الهدايا الافتراضية، وانضم إلى غرف المحادثة التفاعلية.
 				</div>
@@ -42,7 +42,7 @@ const HeroSection = () => {
 
 					<Link
 						to="/about"
-						className="md:w-60 w-48 h-12 rounded-full bg-[#6B6758] md:icon-text-hover icon-text-hover flex items-center justify-center gap-2"
+						className="md:w-60 w-48 h-12 rounded-full border-2 border-primary md:icon-text-hover icon-text-hover flex items-center justify-center gap-2"
 					>
 						<img className="w-6 h-6" src="./more-down.svg" alt="more-down" />
 						<span className="text-white md:text-lg text-sm">اعرف المزيد</span>
