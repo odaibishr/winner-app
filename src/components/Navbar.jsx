@@ -103,14 +103,14 @@ const Navbar = () => {
 
 				{/* Navbar Mobile */}
 				<div
-					className={`lg:hidden fixed top-0 left-0 right-0 bg-[#9E8F7F] shadow-lg transition-all duration-300 ease-in-out z-50 ${
+					className={`lg:hidden fixed top-0 left-0 right-0 bg-black shadow-lg transition-all duration-300 ease-in-out z-50 ${
 						isMenuOpen
 							? "opacity-100 visible translate-y-0"
 							: "opacity-0 invisible -translate-y-full"
 					}`}
 				>
 					{/*  Logo Mobile */}
-					<div className="flex justify-between items-center p-4 border-b border-yellow-700">
+					<div className="flex justify-between items-center p-4 border-b border-primary">
 						<Link
 							to="/"
 							className="w-[120px] h-12 flex items-center gap-2 group transition-all duration-300 ease-in-out cursor-pointer"
@@ -118,7 +118,7 @@ const Navbar = () => {
 						>
 							<div className="text-amber-300 text-3xl font-medium">Winner</div>
 							<img
-								className="w-12 h-12 rounded-[10px] border border-orange-300"
+								className="w-12 h-12 rounded-[10px] border border-primary"
 								src="./logo.svg"
 								alt="logo"
 							/>
@@ -128,7 +128,7 @@ const Navbar = () => {
 							className="flex flex-col justify-center items-center w-10 h-10 space-y-1"
 							onClick={toggleMenu}
 						>
-							<span className="block w-6 h-0.5 bg-amber-300 rotate-45 translate-y-1.5"></span>
+							<span className="block w-6 h-0.5 bg-primary rotate-45 translate-y-1.5"></span>
 							{/* <span className="block w-6 h-0.5 bg-amber-300 -rotate-45 -translate-y-1.5"></span> */}
 						</button>
 					</div>
@@ -139,7 +139,7 @@ const Navbar = () => {
 							<Link
 								key={index}
 								to={item.link}
-								className="text-primary text-xl font-medium py-3 px-4 hover:bg-yellow-700 hover:text-white rounded-[8px] transition-all duration-300 text-center"
+								className="text-primary text-xl font-medium py-3 px-4 hover:bg-primary hover:text-black rounded-[8px] transition-all duration-300 text-center"
 								onClick={() => setIsMenuOpen(false)}
 							>
 								{item.name}
