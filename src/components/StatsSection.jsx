@@ -22,7 +22,7 @@ const StatsSection = () => {
 
 	return (
 		<section className="container opacity-0 translate-y-6 transition-all duration-700 ease-out stats-animate">
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-12">
 				{/* items */}
 
 				{statsItems.map((item, index) => (

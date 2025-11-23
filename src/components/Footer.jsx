@@ -29,10 +29,16 @@ const Footer = () => {
 						<div className="flex flex-col gap-4">
 							<h2 className="text-primary text-3xl font-medium">الــدعم</h2>
 							<div className="flex flex-col md:gap-3 gap-2">
-								<Link to="/privacy-policy" className="text-white md:text-lg text-md">
+								<Link
+									to="/privacy-policy"
+									className="text-white md:text-lg text-md"
+								>
 									سياسة الخصوصية
 								</Link>
-								<Link to="/terms-of-service" className="text-white md:text-lg text-md">
+								<Link
+									to="/terms-of-service"
+									className="text-white md:text-lg text-md"
+								>
 									شروط الاستخدام
 								</Link>
 								<Link to="/support" className="text-white md:text-lg text-md">

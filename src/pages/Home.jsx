@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const Home = () => {
 	return (
-		<div className="relative w-full bg-gradient">
+		<div className="relative w-full bg-black">
 			<HeroSection />
 			<Footer />
 		</div>

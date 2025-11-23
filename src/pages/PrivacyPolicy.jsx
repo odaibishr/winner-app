@@ -2,6 +2,7 @@ import SectionHeader from "../components/SectionHeader";
 import ContentSection from "../components/ContentSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
+import { privacyPolicyItems } from "../utils/constant";
 
 const PrivacyPolicy = () => {
 	return (
@@ -13,7 +14,7 @@ const PrivacyPolicy = () => {
 				/>
 			</section>
 			<section className="container mt-13">
-				<ContentSection />
+				<ContentSection data={privacyPolicyItems} />
 			</section>
 			<section className="container mt-13">
 				<ContactSection />

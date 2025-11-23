@@ -1,4 +1,8 @@
 import SectionHeader from "../components/SectionHeader";
+import ContentSection from "../components/ContentSection";
+import ContactSection from "../components/ContactSection";
+import { termsOfServiceItems } from "../utils/constant";
+import Footer from "../components/Footer";
 
 const TermsOfService = () => {
 	return (
@@ -9,6 +13,13 @@ const TermsOfService = () => {
 					description="القواعد والأحكام التي تحكم استخدام تطبيق Winner"
 				/>
 			</section>
+			<section className="container mt-13">
+				<ContentSection data={termsOfServiceItems} />
+			</section>
+			<section className="container mt-13">
+				<ContactSection />
+			</section>
+			<Footer />
 		</div>
 	);
 };
