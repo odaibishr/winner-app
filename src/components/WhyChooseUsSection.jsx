@@ -1,6 +1,7 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
 import FeaturedCard from "./FeaturedCard";
+import { featuredCardData } from "../utils/constant";
 
 const WhyChooseUsSection = () => {
 	return (
@@ -15,14 +16,14 @@ const WhyChooseUsSection = () => {
 				<div className="container">
 					<div className="flex justify-center">
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-x-10 py-10 md:py-0">
-							{Array.from({ length: 3 }).map((_, index) => (
+							{featuredCardData.slice(0, 3).map((item, index) => (
 								<div key={index} className="md:-translate-y-12">
-									<FeaturedCard />
+									<FeaturedCard {...item} />
 								</div>
 							))}
-							{Array.from({ length: 3 }).map((_, index) => (
+							{featuredCardData.slice(3, 6).map((item, index) => (
 								<div key={index} className="md:translate-y-12">
-									<FeaturedCard />
+									<FeaturedCard {...item} />
 								</div>
 							))}
 						</div>
