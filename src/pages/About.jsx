@@ -1,6 +1,7 @@
 import React from "react";
 import VisionMissionSection from "../components/VisionMissionSection";
 import FeaturesSection from "../components/FeaturesSection";
+import OurValuesSection from "../components/OurValuesSection";
 
 const About = () => {
 	return (
@@ -26,6 +27,7 @@ const About = () => {
 			</section>
 			<VisionMissionSection />
 			<FeaturesSection />
+			<OurValuesSection />
 		</main>
 	);
 };

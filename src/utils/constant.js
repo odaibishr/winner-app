@@ -204,3 +204,44 @@ export const featuresCardData = [
 		description: "حماية متقدمة لبياناتك وخصوصيتك مع تشفير من الطراز الأول",
 	},
 ];
+
+export const ourValuesData = [
+	{
+		id: 0,
+		icon: "/lock-outline.svg",
+		title: "الأمان والخصوصية",
+		description:
+			"نضع أمان بياناتك وخصوصيتك في المقدمة، مع أحدث تقنيات التشفير والحماية.",
+	},
+	{
+		id: 1,
+		icon: "/light-broken.svg",
+		title: "الابتكار المستمر",
+		description:
+			"نسعى دائماً لتطوير ميزات جديدة ومبتكرة لتحسين تجربة المستخدمين.",
+	},
+	{
+		id: 2,
+		icon: "/handshake-outline.svg",
+		title: "المجتمع أولاً",
+		description: "نبني منصة تخدم المجتمع وتعزز التواصل الإيجابي بين الأشخاص.",
+	},
+	{
+		id: 3,
+		icon: "/lightning-light.svg",
+		title: "الأداء العالي",
+		description: "نضمن تجربة سريعة وسلسة على جميع الأجهزة والشبكات.",
+	},
+	{
+		id: 4,
+		icon: "/world-fill.svg",
+		title: "التنوع والشمولية",
+		description: "نرحب بجميع الثقافات والخلفيات في مجتمع Winner المتنوع.",
+	},
+	{
+		id: 5,
+		icon: "/handshake.svg",
+		title: "المسؤولية الاجتماعية",
+		description: "نساهم في بناء مجتمع رقمي صحي وإيجابي للجميع.",
+	},
+];
