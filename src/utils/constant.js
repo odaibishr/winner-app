@@ -174,5 +174,33 @@ export const featuredCardData = [
 		icon: "/generate-content.svg",
 		title: "محتوى متنوع",
 		description: "شارك الصور والفيديوهات والقصص مع مجتمع Winner النشط",
-	},	
+	},
+];
+
+export const featuresCardData = [
+	{
+		id: 0,
+		icon: "/gift.svg",
+		title: "نظام الهدايا",
+		description: "أرسل واستقبل الهدايا الافتراضية مع أصدقائك وأحبائك",
+	},
+	{
+		id: 1,
+		icon: "/users-group.svg",
+		title: "الغرف التفاعلية",
+		description:
+			"انضم إلى غرف المحادثة الجماعية وتفاعل مع مستخدمين من جميع أنحاء العالم",
+	},
+	{
+		id: 2,
+		icon: "/smartphone-update.svg",
+		title: "تجربة سلسة",
+		description: "واجهة مستخدم بديهية وتجربة استخدام ممتعة على جميع الأجهزة",
+	},
+	{
+		id: 3,
+		icon: "/lock-outline.svg",
+		title: "أمان عالي",
+		description: "حماية متقدمة لبياناتك وخصوصيتك مع تشفير من الطراز الأول",
+	},
 ];
