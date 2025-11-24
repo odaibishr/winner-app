@@ -1,5 +1,6 @@
 import React from "react";
 import VisionMissionSection from "../components/VisionMissionSection";
+import FeaturesSection from "../components/FeaturesSection";
 
 const About = () => {
 	return (
@@ -24,6 +25,7 @@ const About = () => {
 				</div>
 			</section>
 			<VisionMissionSection />
+			<FeaturesSection />
 		</main>
 	);
 };
