@@ -245,3 +245,78 @@ export const ourValuesData = [
 		description: "نساهم في بناء مجتمع رقمي صحي وإيجابي للجميع.",
 	},
 ];
+
+export const capabilityData = [
+	{
+		id: 0,
+		title: "التــواصـــل",
+		itesm: [
+			{
+				id: 0,
+				icon: "/chat.svg",
+				title: "المحادثات الفورية",
+				description: " تواصل مع الأصدقاء في الوقت الفعلي",
+			},
+			{
+				id: 1,
+				icon: "/chat.svg",
+				title: "المحادثات الفورية",
+				description: " تواصل مع الأصدقاء في الوقت الفعلي",
+			},
+			{
+				id: 2,
+				icon: "/call-chat.svg",
+				title: "المكالمات الصوتية",
+				description: "تحدث مع الأصدقاء بجودة صوت عالية",
+			},
+		],
+	},
+	{
+		id: 1,
+		title: "الـــترفيـــــه",
+		itesm: [
+			{
+				id: 0,
+				icon: "/gift.svg",
+				title: "نظام الهدايا",
+				description: "أرسل هدايا افتراضية معبرة",
+			},
+			{
+				id: 1,
+				icon: "/gampad.svg",
+				title: "الألعاب التفاعلية",
+				description: "العب ألعاب ممتعة مع الأصدقاء",
+			},
+			{
+				id: 2,
+				icon: "/stories.svg",
+				title: "القصص المصورة",
+				description: "شارك لحظاتك المميزة",
+			},
+		],
+	},
+	{
+		id: 2,
+		title: "الأمــــــــان",
+		itesm: [
+			{
+				id: 0,
+				icon: "/encryption.svg",
+				title: "التشفير المتقدم",
+				description: "حماية كاملة لمحادثاتك",
+			},
+			{
+				id: 1,
+				icon: "/domain-verfication.svg",
+				title: "التحقق من الهوية",
+				description: "نظام تحقق موثوق",
+			},
+			{
+				id: 2,
+				icon: "/ban.svg",
+				title: "الإبلاغ والحظر",
+				description: "أدوات حماية من المحتوى غير المرغوب",
+			},
+		],
+	},
+];
