@@ -1,5 +1,6 @@
 import CapabilitySections from "../components/CapabilitySections";
 import DetailedFeaturesSection from "../components/DetailedFeaturesSection";
+import TechnicalSpecificationsSection from "../components/TechnicalSpecificationsSection";
 
 const Features = () => {
 	return (
@@ -29,6 +30,7 @@ const Features = () => {
 			</section>
 			<CapabilitySections />
 			<DetailedFeaturesSection />
+			<TechnicalSpecificationsSection />
 		</main>
 	);
 };
