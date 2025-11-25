@@ -8,7 +8,7 @@ import PrimaryButton from "../components/PrimaryButton";
 const About = () => {
 	return (
 		<main className="bg-black pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 min-h-screen">
-			<section className="pb-16 md:pb-20 border border-b-white md:shadow-2xl shadow-lg shadow-white/50">
+			<section className="pb-16 md:pb-20 section-border">
 				<div className="container mx-auto flex flex-col gap-4 px-4">
 					<span className="text-white font-bold text-6xl sm:text-7xl md:text-[200px] lg:text-[250px] leading-none md:leading-1">
 						قصة
@@ -31,7 +31,7 @@ const About = () => {
 			<FeaturesSection />
 			<OurValuesSection />
 			{/* join section */}
-			<section className="container md:py-20 py-20 flex flex-col justify-center items-center gap-4">
+			<section className="container md:py-20 py-20 flex flex-col justify-center items-center gap-4 section-border">
 				<SectionHeader
 					title="انضم إلى عائلة Winner"
 					description="كن جزءاً من مجتمعنا النشط واستمتع بتجربة تواصل اجتماعي فريدة"
@@ -47,6 +47,8 @@ const About = () => {
 					link="/contact"
 				/>
 			</section>
+
+			
 		</main>
 	);
 };

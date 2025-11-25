@@ -69,4 +69,8 @@ html {
 	.green-gradient {
 		@apply bg-linear-to-b from-[#9E7900]/50 to-[#382B00]/50 shadow-[0px_4px_4px_0px_rgba(255,255,255,0.25)];
 	}
+
+	.section-border {
+		@apply border border-b-white md:shadow-2xl shadow-lg shadow-white/50;
+	}
 }
