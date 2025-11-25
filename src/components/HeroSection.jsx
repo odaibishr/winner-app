@@ -33,7 +33,11 @@ const HeroSection = () => {
 				</div>
 
 				<div className="mt-8 flex md:flex-row flex-col items-center md:gap-5 gap-3">
-					<PrimaryButton title="تحميل التطبيق" link="/download" />
+					<PrimaryButton
+						title="تحميل التطبيق"
+						icon="/download.svg"
+						link="/download"
+					/>
 
 					<Link
 						to="/about"

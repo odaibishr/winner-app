@@ -36,7 +36,16 @@ const About = () => {
 					title="انضم إلى عائلة Winner"
 					description="كن جزءاً من مجتمعنا النشط واستمتع بتجربة تواصل اجتماعي فريدة"
 				/>
-				<PrimaryButton title="تحميل التطبيق" link="/download" />
+				<PrimaryButton
+					title="تحميل التطبيق"
+					icon="/download.svg"
+					link="/download"
+				/>
+				<PrimaryButton
+					title="تواصـــل معنـــا"
+					icon="/light-connect.svg"
+					link="/contact"
+				/>
 			</section>
 		</main>
 	);
