@@ -5,6 +5,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import About from "./pages/About";
 import Features from "./pages/Features";
+import Contact from "./pages/Contact.jsx";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 			<Route path="/terms-of-service" element={<TermsOfService />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/features" element={<Features />} />
+            <Route path="/contact" element={<Contact />} />
 		</Routes>
 	);
 }
