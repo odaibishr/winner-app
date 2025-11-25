@@ -4,10 +4,11 @@ import FeaturesSection from "../components/FeaturesSection";
 import OurValuesSection from "../components/OurValuesSection";
 import SectionHeader from "../components/SectionHeader";
 import PrimaryButton from "../components/PrimaryButton";
+import Footer from "../components/Footer";
 
 const About = () => {
 	return (
-		<main className="bg-black pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 min-h-screen">
+		<main className="bg-black pt-32 md:pt-40 lg:pt-48 min-h-screen">
 			<section className="pb-16 md:pb-20 section-border">
 				<div className="container mx-auto flex flex-col gap-4 px-4">
 					<span className="text-white font-bold text-6xl sm:text-7xl md:text-[200px] lg:text-[250px] leading-none md:leading-1">
@@ -31,7 +32,7 @@ const About = () => {
 			<FeaturesSection />
 			<OurValuesSection />
 			{/* join section */}
-			<section className="container md:py-20 py-20 flex flex-col justify-center items-center gap-4 section-border">
+			<section className="md:py-20 py-20 flex flex-col justify-center items-center gap-4 section-border">
 				<SectionHeader
 					title="انضم إلى عائلة Winner"
 					description="كن جزءاً من مجتمعنا النشط واستمتع بتجربة تواصل اجتماعي فريدة"
@@ -48,7 +49,7 @@ const About = () => {
 				/>
 			</section>
 
-			
+			<Footer />
 		</main>
 	);
 };
