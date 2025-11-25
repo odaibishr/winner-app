@@ -1,7 +1,9 @@
+import CapabilitySections from "../components/CapabilitySections";
+
 const Features = () => {
 	return (
-        <main className="bg-black pt-32 md:pt-40 lg:pt-48 min-h-screen">
-            {/* Features Hero section */}
+		<main className="bg-black pt-32 md:pt-40 lg:pt-48 min-h-screen">
+			{/* Features Hero section */}
 			<section className="pb-16 md:pb-20 section-border">
 				<div className="container text-center md:text-start flex flex-col gap-4 px-4">
 					<span className="text-white font-bold text-6xl sm:text-7xl md:text-[100px] lg:text-[170px] leading-none md:leading-1">
@@ -23,6 +25,8 @@ const Features = () => {
 						</p>
 					</div>
 				</div>
+
+				<CapabilitySections />
 			</section>
 		</main>
 	);
