@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import StatsSection from "./StatsSection";
 import PrimaryButton from "./PrimaryButton";
+import OutlineButton from "./OutlineButton.jsx";
 
 const HeroSection = () => {
 	return (
@@ -39,13 +39,7 @@ const HeroSection = () => {
 						link="/download"
 					/>
 
-					<Link
-						to="/about"
-						className="md:w-60 w-48 h-12 rounded-full border-2 border-primary md:icon-text-hover icon-text-hover flex items-center justify-center gap-2"
-					>
-						<img className="w-6 h-6" src="./more-down.svg" alt="more-down" />
-						<span className="text-white md:text-lg text-sm">اعرف المزيد</span>
-					</Link>
+					<OutlineButton title="اعرف المزيد" link="/about" icon='/more-down.svg'/>
 				</div>
 				{/* Stats Inside Background */}
 				<div className="relative z-10 md:mt-20 mt-5">

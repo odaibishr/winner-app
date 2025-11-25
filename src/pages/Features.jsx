@@ -1,6 +1,8 @@
 import CapabilitySections from "../components/CapabilitySections";
 import DetailedFeaturesSection from "../components/DetailedFeaturesSection";
 import TechnicalSpecificationsSection from "../components/TechnicalSpecificationsSection";
+import SectionHeader from "../components/SectionHeader.jsx";
+import PrimaryButton from "../components/PrimaryButton.jsx";
 
 const Features = () => {
 	return (
@@ -31,6 +33,17 @@ const Features = () => {
 			<CapabilitySections />
 			<DetailedFeaturesSection />
 			<TechnicalSpecificationsSection />
+            <section className="container flex flex-col items-center justify-center gap-4 py-16 md:py-20">
+                <SectionHeader
+                    title="جرب جميع الميزات الآن"
+                    description="حمّل التطبيق واستمتع بتجربة تواصل اجتماعي فريدة مع جميع هذه الميزات المتقدمة"
+                />
+                <PrimaryButton
+                    title="تحميل التطبيق"
+                    icon="/download.svg"
+                    link="/download"
+                />
+            </section>
 		</main>
 	);
 };
