@@ -5,7 +5,7 @@ import { ourValuesData } from "../utils/constant";
 
 const OurValuesSection = () => {
 	return (
-		<section className="md:py-20 py-16 border border-b-white md:shadow-2xl shadow-lg shadow-white/50">
+		<section className="md:py-20 py-16 section-border">
 			<div className="container">
 				<SectionHeader
 					title="قيمنا"

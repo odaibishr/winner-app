@@ -5,7 +5,7 @@ import { featuresCardData } from "../utils/constant";
 
 const FeaturesSection = () => {
 	return (
-		<section className="md:py-20 py-16 border border-b-white md:shadow-2xl shadow-lg shadow-white/50 ">
+		<section className="md:py-20 py-16 section-border ">
 			<SectionHeader
 				title="ما يميز Winner"
 				description="انضم إلى مجتمعنا النشط واستمتع بتجربة تواصل اجتماعي لا مثيل لها"

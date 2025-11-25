@@ -3,7 +3,7 @@ import HorizontailInfoCard from "./HorizontailInfoCard";
 
 const VisionMissionSection = () => {
 	return (
-		<section className="md:py-20 py-16 border border-b-white md:shadow-2xl shadow-lg shadow-white/50">
+		<section className="md:py-20 py-16 section-border">
 			<div className="container flex flex-col md:gap-20 gap-16">
 				<HorizontailInfoCard
 					index={0}
