@@ -2,12 +2,45 @@ import React from "react";
 
 const CapabilityCard = ({ icon, title, description }) => {
 	return (
-		<div className="flex flex-col gap-2 py-4 px-6 bg-white rounded-4xl">
-			<div className="flex items-center gap-2">
-				<img src={icon} alt="chat" className="invert-50 h-8 w-8" />
-				<span className="text-secondary text-2xl md:text-3xl">{title}</span>
+		<div className="group">
+			<div
+				className="flex flex-col gap-3 w-[380] h-[126px] justify-center items-center py-5 px-6 bg-white rounded-4xl
+			                transition-all duration-300 ease-out
+			                group-hover:bg-secondary group-hover:scale-0.5"
+			>
+				<div
+					className="flex items-center gap-2
+				                transition-transform duration-300 ease-out
+				                group-hover:-translate-y-2"
+				>
+					<img
+						src={icon}
+						alt={title}
+						className="
+							h-8 w-8
+							transition-all duration-300 ease-out
+							filter invert-50
+							group-hover:invert group-hover:brightness-0 fill-white
+						"
+					/>
+
+					<span
+						className="text-secondary text-2xl md:text-3xl
+					                 transition-colors duration-300 ease-out
+					                 group-hover:text-white"
+					>
+						{title}
+					</span>
+				</div>
+
+				<p
+					className="text-black/60 text-md
+				              transition-all duration-300 ease-out
+				              group-hover:text-white/70 group-hover:text-sm"
+				>
+					{description}
+				</p>
 			</div>
-			<p className="text-black/50">{description}</p>
 		</div>
 	);
 };
