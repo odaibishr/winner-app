@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import StatsSection from "./StatsSection";
+import PrimaryButton from "./PrimaryButton";
 
 const HeroSection = () => {
 	return (
@@ -32,13 +33,7 @@ const HeroSection = () => {
 				</div>
 
 				<div className="mt-8 flex md:flex-row flex-col items-center md:gap-5 gap-3">
-					<Link
-						to="/download"
-						className="md:w-60 w-48 h-12 rounded-[100px] bg-primary-300/20 backdrop-blur-2xl md:icon-text-hover flex items-center justify-center gap-2 [box-shadow:inset_-15px_15px_15px_rgba(255,255,255,0.20),inset_15px_-15px_15px_rgba(193,166,78,0.20)]"
-					>
-						<img src="./download.svg" alt="download" className="w-5 h-5" />
-						<span className="text-white md:text-lg text-sm">تحميل التطبيق</span>
-					</Link>
+					<PrimaryButton title="تحميل التطبيق" link="/download" />
 
 					<Link
 						to="/about"

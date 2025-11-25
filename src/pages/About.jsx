@@ -2,6 +2,8 @@ import React from "react";
 import VisionMissionSection from "../components/VisionMissionSection";
 import FeaturesSection from "../components/FeaturesSection";
 import OurValuesSection from "../components/OurValuesSection";
+import SectionHeader from "../components/SectionHeader";
+import PrimaryButton from "../components/PrimaryButton";
 
 const About = () => {
 	return (
@@ -28,6 +30,14 @@ const About = () => {
 			<VisionMissionSection />
 			<FeaturesSection />
 			<OurValuesSection />
+			{/* join section */}
+			<section className="container md:py-20 py-20 flex flex-col justify-center items-center gap-4">
+				<SectionHeader
+					title="انضم إلى عائلة Winner"
+					description="كن جزءاً من مجتمعنا النشط واستمتع بتجربة تواصل اجتماعي فريدة"
+				/>
+				<PrimaryButton title="تحميل التطبيق" link="/download" />
+			</section>
 		</main>
 	);
 };
