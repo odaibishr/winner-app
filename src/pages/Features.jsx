@@ -1,4 +1,5 @@
 import CapabilitySections from "../components/CapabilitySections";
+import DetailedFeaturesSection from "../components/DetailedFeaturesSection";
 
 const Features = () => {
 	return (
@@ -27,6 +28,7 @@ const Features = () => {
 				</div>
 			</section>
 			<CapabilitySections />
+			<DetailedFeaturesSection />
 		</main>
 	);
 };

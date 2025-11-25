@@ -326,7 +326,7 @@ export const detailedFeaturesData = [
 		id: 0,
 		image: "/gift-system.png",
 		title: "نظام الهدايا التفاعلي",
-		description:
+		text:
 			"أرسل واستقبل الهدايا الافتراضية المعبرة مع أصدقائك. نظام متطور يتيح لك التعبير عن مشاعرك بطريقة مميزة.",
 		items: [
 			"أكثر من 50 نوع هدية مختلفة",
@@ -339,7 +339,7 @@ export const detailedFeaturesData = [
 		id: 1,
 		image: "/room-effictives.png",
 		title: "الغرف التفاعلية",
-		description:
+		text:
 			"انضم إلى غرف المحادثة الجماعية وتفاعل مع مستخدمين من جميع أنحاء العالم في بيئة آمنة ومراقبة.",
 		items: [
 			"غرف عامة وخاصة",
@@ -352,7 +352,7 @@ export const detailedFeaturesData = [
 		id: 2,
 		image: "/privacy-security.png",
 		title: "الأمان والخصوصية",
-		description:
+		text:
 			"نضع أمان بياناتك وخصوصيتك في المقدمة مع أحدث تقنيات التشفير والحماية المتقدمة.",
 		items: [
 			"تشفير end-to-end للمحادثات",
