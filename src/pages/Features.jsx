@@ -3,6 +3,8 @@ import DetailedFeaturesSection from "../components/DetailedFeaturesSection";
 import TechnicalSpecificationsSection from "../components/TechnicalSpecificationsSection";
 import SectionHeader from "../components/SectionHeader.jsx";
 import PrimaryButton from "../components/PrimaryButton.jsx";
+import OutlineButton from "../components/OutlineButton.jsx";
+import Footer from "../components/Footer.jsx";
 
 const Features = () => {
 	return (
@@ -43,7 +45,13 @@ const Features = () => {
                     icon="/download.svg"
                     link="/download"
                 />
+                <OutlineButton
+                    title="اعرف المزيد"
+                icon="/more-down.svg"
+                link="/about"
+                />
             </section>
+            <Footer />
 		</main>
 	);
 };
