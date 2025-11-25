@@ -250,7 +250,7 @@ export const capabilityData = [
 	{
 		id: 0,
 		title: "التــواصـــل",
-		itesm: [
+		items: [
 			{
 				id: 0,
 				icon: "/chat.svg",
@@ -259,7 +259,7 @@ export const capabilityData = [
 			},
 			{
 				id: 1,
-				icon: "/chat.svg",
+				icon: "/users-group.svg",
 				title: "المحادثات الفورية",
 				description: " تواصل مع الأصدقاء في الوقت الفعلي",
 			},
@@ -274,7 +274,7 @@ export const capabilityData = [
 	{
 		id: 1,
 		title: "الـــترفيـــــه",
-		itesm: [
+		items: [
 			{
 				id: 0,
 				icon: "/gift.svg",
@@ -298,7 +298,7 @@ export const capabilityData = [
 	{
 		id: 2,
 		title: "الأمــــــــان",
-		itesm: [
+		items: [
 			{
 				id: 0,
 				icon: "/encryption.svg",

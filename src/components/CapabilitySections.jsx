@@ -1,9 +1,12 @@
+import { capabilityData } from "../utils/constant";
 import CapabilityGroup from "./CapabilityGroup";
 
 const CapabilitySections = () => {
 	return (
-		<section className="container py-10 md:py-20">
-			<CapabilityGroup capabliityTitle="التواصل" />
+		<section className="container py-16 md:py-20">
+			{capabilityData.map((capability) => (
+				<CapabilityGroup key={capability.id} capability={capability} />
+			))}
 		</section>
 	);
 };
