@@ -9,7 +9,7 @@ const DetailedFeaturesSection = () => {
 				title="ميزات مفصلة"
 				description="تعرف على كل ميزة بالتفصيل"
             />
-            <div className="container flex flex-col gap-12">
+            <div className="container flex flex-col gap-12 md:mt-16 mt-10">
                     {detailedFeaturesData.map((feature) => (
                         <HorizontailInfoCard key={feature.id} index={feature.id} {...feature} isDetailed={true} />
                     ))}
