@@ -1,6 +1,6 @@
 const HorizontailInfoCard = ({ index, title, text, image }) => {
 	return (
-		<div className="flex flex-col md:flex-row items-center justify-between gap-6">
+		<div className="flex flex-col md:flex-row group items-center justify-between gap-6">
 			<div
 				className={`md:w-[40%] rounded-4xl overflow-hidden ${
 					index % 2 === 0 ? "order-1 md:order-2" : "order-2 md:order-1"
@@ -9,7 +9,7 @@ const HorizontailInfoCard = ({ index, title, text, image }) => {
 				<img
 					src={image}
 					alt="vision"
-					className="w-full h-full transition-transform duration-300 hover:scale-130"
+					className="w-full h-full transition-transform duration-300 group-hover:scale-130"
 				/>
 			</div>
 
