@@ -25,9 +25,8 @@ const Features = () => {
 						</p>
 					</div>
 				</div>
-
-				<CapabilitySections />
 			</section>
+			<CapabilitySections />
 		</main>
 	);
 };
