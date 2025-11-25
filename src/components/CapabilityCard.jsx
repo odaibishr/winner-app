@@ -4,7 +4,7 @@ const CapabilityCard = ({ icon, title, description }) => {
 	return (
 		<div className="group">
 			<div
-				className="flex flex-col gap-3 w-[380] h-[126px] justify-center items-center py-5 px-6 bg-white rounded-4xl
+				className="flex flex-col gap-3 w-[380px] h-[126px] justify-center items-center py-5 px-6 bg-white rounded-4xl
 			                transition-all duration-300 ease-out
 			                group-hover:bg-secondary group-hover:scale-0.5"
 			>

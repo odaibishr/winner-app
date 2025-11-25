@@ -260,8 +260,8 @@ export const capabilityData = [
 			{
 				id: 1,
 				icon: "/users-group.svg",
-				title: "المحادثات الفورية",
-				description: " تواصل مع الأصدقاء في الوقت الفعلي",
+				title: "الغرف الجماعية",
+				description: "انضم إلى محادثات جماعية مع مستخدمين متعددين",
 			},
 			{
 				id: 2,
