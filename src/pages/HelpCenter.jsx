@@ -1,4 +1,5 @@
 import SectionHeader from "../components/SectionHeader.jsx";
+import ContactSupportWaysSection from "../components/ContactSupportWaysSection.jsx";
 
 const HelpCenter = () => {
     return (
@@ -9,6 +10,7 @@ const HelpCenter = () => {
                     description="نحن هنا لمساعدتك! احصل على الدعم الفني والإجابات على جميع استفساراتك"
                 />
             </div>
+            <ContactSupportWaysSection />
         </main>
     );
 }
