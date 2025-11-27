@@ -1,5 +1,7 @@
 import SectionHeader from "../components/SectionHeader.jsx";
 import ContactSupportWaysSection from "../components/ContactSupportWaysSection.jsx";
+import FAQsSection from "../components/FAQsSection.jsx";
+import { faqs2Items } from "../data/constant.js";
 
 const HelpCenter = () => {
 	return (
@@ -11,6 +13,9 @@ const HelpCenter = () => {
 				/>
 			</div>
 			<ContactSupportWaysSection />
+			<div className="py-10 section-border">
+				<FAQsSection items={faqs2Items} />
+			</div>
 		</main>
 	);
 };

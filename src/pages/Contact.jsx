@@ -1,6 +1,7 @@
 import SectionHeader from "../components/SectionHeader.jsx";
 import FormSection from "../components/FormSection.jsx";
 import FAQsSection from "../components/FAQsSection.jsx";
+import { faqsItems } from "../data/constant.js";
 
 const Contact = () => {
     return (
@@ -12,7 +13,7 @@ const Contact = () => {
                 />
             </div>
             <FormSection />
-            <FAQsSection />
+            <FAQsSection items={faqsItems} />
         </main>
     );
 }
