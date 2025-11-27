@@ -42,7 +42,7 @@ const Footer = () => {
                                     >
                                         شروط الاستخدام
                                     </Link>
-                                    <Link to="/support" className="text-white md:text-lg text-md">
+                                    <Link to="/help-center" className="text-white md:text-lg text-md">
                                         مركز المساعدة
                                     </Link>
                                 </div>
