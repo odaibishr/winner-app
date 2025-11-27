@@ -1,5 +1,4 @@
-export const menuItems = [
-	{
+export const menuItems = [{
 		name: "الرئيسة",
 		link: "/",
 	},
