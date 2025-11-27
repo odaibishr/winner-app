@@ -1,4 +1,4 @@
-import { detailedFeaturesData } from "../utils/constant";
+import { detailedFeaturesData } from "../data/constant.js";
 import SectionHeader from "./SectionHeader";
 import HorizontailInfoCard from "./HorizontailInfoCard";
 

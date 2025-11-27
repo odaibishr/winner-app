@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { statsItems } from "../utils/constant";
+import { statsItems } from "../data/constant.js";
 import StatsItem from "./StatsItem";
 
 const StatsSection = () => {

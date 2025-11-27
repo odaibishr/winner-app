@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
 import FeaturedCard from "./FeaturedCard";
-import { featuredCardData } from "../utils/constant";
+import { featuredCardData } from "../data/constant.js";
 
 const WhyChooseUsSection = () => {
 	return (

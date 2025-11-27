@@ -9,8 +9,8 @@ import {
 	FormMessage,
 } from "./ui/form";
 import { Input } from "./ui/input";
-import { sendEmail } from "../utils/EmailService";
-import { ContactSchema } from "../utils/ContactSchema";
+import { sendEmail } from "../lib/EmailService";
+import { ContactSchema } from "../lib/ContactSchema";
 import { Textarea } from "./ui/textarea.jsx";
 
 export default function ContactForm() {

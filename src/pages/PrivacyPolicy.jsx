@@ -2,7 +2,7 @@ import SectionHeader from "../components/SectionHeader";
 import ContentSection from "../components/ContentSection";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
-import { privacyPolicyItems } from "../utils/constant";
+import { privacyPolicyItems } from "../data/constant.js";
 
 const PrivacyPolicy = () => {
 	return (

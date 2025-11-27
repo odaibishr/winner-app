@@ -1,4 +1,4 @@
-import { capabilityData } from "../utils/constant";
+import { capabilityData } from "../data/constant.js";
 import CapabilityGroup from "./CapabilityGroup";
 
 const CapabilitySections = () => {

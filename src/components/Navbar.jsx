@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { menuItems } from "../utils/constant";
+import { menuItems } from "../data/constant.js";
 import MenuItem from "./MenuItem";
 
 const Navbar = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
 					</div>
 					<img
 						className="w-8 h-8 md:w-12 md:h-12 rounded-[10px] border border-orange-300 transition-all duration-300 ease-in-out md:group-hover:translate-x-2"
-						src="./logo.svg"
+						src="/logo.svg"
 						alt="logo"
 					/>
 				</Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
 				{/* Buttons Desktop */}
 				<div className="hidden lg:flex items-center gap-6">
 					<div className="w-[180px] h-12 bg-linear-to-b from-yellow-700 to-yellow-950 rounded-[10px] icon-text-hover flex items-center justify-center gap-2">
-						<img className="" src="./download.svg" alt="download" />
+						<img className="" src="/download.svg" alt="download" />
 						<span className="text-white">تحميل التطبيق</span>
 					</div>
 
@@ -70,7 +70,7 @@ const Navbar = () => {
 						className="flex items-center gap-2 h-12 w-[180px] rounded-[10px] border-2 border-primary  icon-text-hover p-[2px] text-primary"
 					>
 						<div className="flex items-center gap-2 w-full h-full justify-center rounded-[8px]">
-							<img src="./login.svg" alt="login" />
+							<img src="/login.svg" alt="login" />
 							<span>دخول الإدارة</span>
 						</div>
 					</Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
 							<div className="text-amber-300 text-3xl font-medium">Winner</div>
 							<img
 								className="w-12 h-12 rounded-[10px] border border-primary"
-								src="./logo.svg"
+								src="/logo.svg"
 								alt="logo"
 							/>
 						</Link>
@@ -149,7 +149,7 @@ const Navbar = () => {
 						{/* Buttons Mobile */}
 						<div className="flex flex-col gap-4 mt-4">
 							<div className="w-full h-12 bg-linear-to-b from-yellow-700 to-yellow-950 rounded-[10px] icon-text-hover flex items-center justify-center gap-2">
-								<img className="" src="./download.svg" alt="download" />
+								<img className="" src="/download.svg" alt="download" />
 								<span className="text-white">تحميل التطبيق</span>
 							</div>
 
@@ -159,7 +159,7 @@ const Navbar = () => {
 								onClick={() => setIsMenuOpen(false)}
 							>
 								<div className="flex items-center gap-2 w-full h-full justify-center rounded-[8px]">
-									<img src="./login.svg" alt="login" />
+									<img src="/login.svg" alt="login" />
 									<span>دخول الإدارة</span>
 								</div>
 							</Link>

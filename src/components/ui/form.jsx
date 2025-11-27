@@ -1,7 +1,4 @@
-"use client"
-
 import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
 import {
     Controller,
@@ -10,7 +7,7 @@ import {
     useFormState,
 } from "react-hook-form"
 
-import { cn } from "../../utils/utils"
+import { cn } from "../../lib/utils"
 import { Label } from "./lable.jsx"
 
 const Form = FormProvider
@@ -130,7 +127,6 @@ function FormMessage({ className, ...props }) {
 }
 
 export {
-    useFormField,
     Form,
     FormItem,
     FormLabel,

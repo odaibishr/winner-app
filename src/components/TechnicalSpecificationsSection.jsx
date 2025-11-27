@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
 import FeaturedCard from "./FeaturedCard.jsx";
-import { technicalSpecificationsData } from "../utils/constant";
+import { technicalSpecificationsData } from "../data/constant.js";
 
 const TechnicalSpecificationsSection = () => {
 	return (
