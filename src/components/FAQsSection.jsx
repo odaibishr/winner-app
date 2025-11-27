@@ -17,7 +17,7 @@ const FAQsSection = ({ items }) => {
 			<AccordionProvider type="single" collapsible>
 				{items.map((item) => (
 					<AccordionItem
-						key={item.index}
+						key={item.id}
 						value={`item-${item.id + 1}`}
 						className="mb-4"
 					>
