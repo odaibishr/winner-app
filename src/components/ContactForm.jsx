@@ -95,8 +95,8 @@ export default function ContactForm() {
 				/>
 
 				<div className="group">
-                    <button type="submit" className="bg-secondary cursor-pointer rounded-full flex items-center mx-auto py-1 px-5 group-hover:scale-95 transition-all duration-200">
-                        <img src="/send.svg" alt="send icon"  className="w-12 h-12"/>
+                    <button type="submit" className="bg-secondary cursor-pointer rounded-full flex items-center justify-center gap-2 mx-auto py-3 px-6 group-hover:scale-95 transition-all duration-200">
+                        <img src="/send.svg" alt="send icon"  className="w-6 h-6"/>
                         <span className="md:text-2xl text-xl text-white font-medium" >إرســـال رســـالة</span>
                     </button>
                 </div>
