@@ -7,6 +7,9 @@ export const ContactSchema = z.object({
     email: z.string().nonempty({
         message: "Email is required",
     }),
+    subject: z.string().nonempty({
+        message: "Subject is required",
+    }),
     message: z.string().nonempty({
         message: "Message is required",
     }),

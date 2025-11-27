@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-// import { Button } from "@/components/ui/button";
 import {
 	Form,
 	FormControl,
@@ -12,7 +11,6 @@ import {
 import { Input } from "./ui/input";
 import { sendEmail } from "../utils/EmailService";
 import { ContactSchema } from "../utils/ContactSchema";
-import PrimaryButton from "./PrimaryButton.jsx";
 import { Textarea } from "./ui/textarea.jsx";
 
 export default function ContactForm() {
@@ -21,6 +19,7 @@ export default function ContactForm() {
 		defaultValues: {
 			name: "",
 			email: "",
+            subject: "",
 			message: "",
 		},
 	});
@@ -29,6 +28,7 @@ export default function ContactForm() {
 		await sendEmail({
 			name: data.name,
 			email: data.email,
+            subject: data.subject,
 			message: data.message,
 		});
 		form.reset();
@@ -36,16 +36,16 @@ export default function ContactForm() {
 
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-				<div className="flex flex-col md:flex-row gap-5 md:gap-10">
+			<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 md:space-y-8">
+				<div className="flex flex-col md:flex-row gap-5 md:gap-x-10 md:gap-y-20">
 					<FormField
 						control={form.control}
 						name="name"
 						render={({ field }) => (
 							<FormItem className="w-full md:w-1/2">
-								<FormLabel>Name</FormLabel>
-								<FormControl className="mt-1 rounded-[10px] h-10 border border-border">
-									<Input placeholder="Name" {...field} />
+								<FormLabel>الاسم بالكامل</FormLabel>
+								<FormControl className="mt-1 rounded-[10px] h-10 border-2 border-secondary">
+									<Input placeholder="الاسم بالكامل" {...field} />
 								</FormControl>
 								<FormMessage />
 							</FormItem>
@@ -56,10 +56,10 @@ export default function ContactForm() {
 						control={form.control}
 						name="email"
 						render={({ field }) => (
-							<FormItem>
-								<FormLabel>Email</FormLabel>
-								<FormControl className="mt-1 rounded-[10px] h-10 border border-border">
-									<Input placeholder="Email" {...field} />
+							<FormItem className="w-full md:w-1/2">
+								<FormLabel>البريد الإلكتروني</FormLabel>
+								<FormControl className="mt-1 rounded-[10px] h-10 border-2 border-secondary">
+									<Input placeholder="البريد الإلكتروني" {...field} />
 								</FormControl>
 								<FormMessage />
 							</FormItem>
@@ -67,23 +67,39 @@ export default function ContactForm() {
 					/>
 				</div>
 
+                <FormField
+                    contorl={form.control}
+                    name="subject"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>الموضوع</FormLabel>
+                            <FormControl className="mt-1 rounded-[10px] h-10 border-2 border-secondary">
+                                <Input placeholder="الموضوع" {...field} />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
+
 				<FormField
 					control={form.control}
 					name="message"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Message</FormLabel>
-							<FormControl className="mt-1 rounded-[10px] border border-border">
-								<Textarea placeholder="Message" {...field} />
+							<FormLabel>الرسالة</FormLabel>
+							<FormControl className="mt-1 rounded-[10px] border-2 border-secondary">
+								<Textarea placeholder="الرسالة"  {...field} />
 							</FormControl>
 							<FormMessage />
 						</FormItem>
 					)}
 				/>
 
-				<button type="submit" className="w-full bg-primary text-black">
-					ارسال
-				</button>
+				<div className="group">
+                    <button type="submit" className="bg-secondary cursor-pointer rounded-full flex items-center mx-auto py-1 px-5 group-hover:scale-95 transition-all duration-200">
+                        <img src="/send.svg" alt="send icon"  className="w-12 h-12"/>
+                        <span className="md:text-2xl text-xl text-white font-medium" >إرســـال رســـالة</span>
+                    </button>
+                </div>
 			</form>
 		</Form>
 	);

@@ -1,5 +1,5 @@
 import SectionHeader from "../components/SectionHeader.jsx";
-import ContactForm from "../components/ContactForm.jsx";
+import FormSection from "../components/FormSection.jsx";
 
 const Contact = () => {
     return (
@@ -10,9 +10,7 @@ const Contact = () => {
                     description="نحن هنا للإجابة على استفساراتك ومساعدتك. لا تتردد في التواصل معنا"
                 />
             </div>
-            <div className="w-full h-screen bg-white">
-                <ContactForm />
-            </div>
+            <FormSection />
         </main>
     );
 }
