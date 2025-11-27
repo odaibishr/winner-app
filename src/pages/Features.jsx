@@ -4,7 +4,6 @@ import TechnicalSpecificationsSection from "../components/TechnicalSpecification
 import SectionHeader from "../components/SectionHeader.jsx";
 import PrimaryButton from "../components/PrimaryButton.jsx";
 import OutlineButton from "../components/OutlineButton.jsx";
-import Footer from "../components/Footer.jsx";
 
 const Features = () => {
 	return (
@@ -51,7 +50,6 @@ const Features = () => {
                 link="/about"
                 />
             </section>
-            <Footer />
 		</main>
 	);
 };

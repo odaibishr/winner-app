@@ -1,7 +1,6 @@
 import SectionHeader from "../components/SectionHeader";
 import ContentSection from "../components/ContentSection";
 import ContactSection from "../components/ContactSection";
-import Footer from "../components/Footer";
 import { privacyPolicyItems } from "../data/constant.js";
 
 const PrivacyPolicy = () => {
@@ -19,8 +18,6 @@ const PrivacyPolicy = () => {
 			<section className="container mt-13">
 				<ContactSection />
 			</section>
-
-			<Footer />
 		</div>
 	);
 };

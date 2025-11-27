@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer.jsx";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")).render(
 			<ScrollToTop behavior="smooth" />
 			<Navbar />
 			<App />
+            <Footer />
 		</BrowserRouter>
 	</StrictMode>
 );

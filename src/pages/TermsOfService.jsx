@@ -2,7 +2,6 @@ import SectionHeader from "../components/SectionHeader";
 import ContentSection from "../components/ContentSection";
 import ContactSection from "../components/ContactSection";
 import { termsOfServiceItems } from "../data/constant.js";
-import Footer from "../components/Footer";
 
 const TermsOfService = () => {
 	return (
@@ -19,7 +18,6 @@ const TermsOfService = () => {
 			<section className="container mt-13">
 				<ContactSection />
 			</section>
-			<Footer />
 		</div>
 	);
 };

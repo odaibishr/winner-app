@@ -1,6 +1,5 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
-import Footer from "../components/Footer";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
 import WinnerCTASection from "../components/WinnerCTASection";
 import SectionHeader from "../components/SectionHeader";
@@ -28,7 +27,6 @@ const Home = () => {
 					link="/contact"
 				/>
 			</section>
-			<Footer />
 		</div>
 	);
 };

@@ -4,7 +4,6 @@ import FeaturesSection from "../components/FeaturesSection";
 import OurValuesSection from "../components/OurValuesSection";
 import SectionHeader from "../components/SectionHeader";
 import PrimaryButton from "../components/PrimaryButton";
-import Footer from "../components/Footer";
 
 const About = () => {
 	return (
@@ -48,8 +47,6 @@ const About = () => {
 					link="/contact"
 				/>
 			</section>
-
-			<Footer />
 		</main>
 	);
 };
