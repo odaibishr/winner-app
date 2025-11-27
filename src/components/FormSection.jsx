@@ -1,4 +1,5 @@
 import ContactForm from "./ContactForm.jsx";
+import ContactFormCard from "./ContactFormCard.jsx";
 
 const FormSection = () => {
     return (
@@ -11,6 +12,23 @@ const FormSection = () => {
                   </h1>
                   <ContactForm />
               </div>
+                  <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                      <ContactFormCard
+                        title="البريد الإلكتروني"
+                        content="support@winner-app.com"
+                        icon="/alternate-email.svg"
+                      />
+                      <ContactFormCard
+                        title="الهاتف"
+                        content="+966 50 123 4567"
+                        icon="/phone.svg"
+                      />
+                      <ContactFormCard
+                        title="ساعات العمل"
+                        content="الأحد - الخميس  9:00 ص - 6:00 م"
+                        icon="/clock.svg"
+                      />
+                  </div>
           </div>
       </section>
     );
