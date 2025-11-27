@@ -2,6 +2,7 @@ import SectionHeader from "../components/SectionHeader.jsx";
 import ContactSupportWaysSection from "../components/ContactSupportWaysSection.jsx";
 import FAQsSection from "../components/FAQsSection.jsx";
 import { faqs2Items } from "../data/constant.js";
+import SupportWorkingHours from "../components/SupportWorkingHours.jsx";
 
 const HelpCenter = () => {
 	return (
@@ -16,6 +17,7 @@ const HelpCenter = () => {
 			<div className="py-10 section-border">
 				<FAQsSection items={faqs2Items} />
 			</div>
+			<SupportWorkingHours />
 		</main>
 	);
 };
