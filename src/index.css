@@ -2,15 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-	--font-sans: "Cairo", sans-serif;
+	--font-sans: "Cairo";
 	--color-orange: #ecc671;
 	--color-primary: #fedb67;
 	--color-secondary: #9E7900;
+    --radix-accordion-content-height: 2.5rem;
 }
 
 html {
 	direction: rtl;
-	font-family: var(--font-sans);
+    font-family: var(--font-sans), sans-serif;
 }
 
 @layer utilities {
@@ -84,7 +85,6 @@ html {
         }
     }
 
-    /* تعريف حركة الإغلاق */
     @keyframes accordion-up {
         from {
             height: var(--radix-accordion-content-height);
@@ -94,7 +94,6 @@ html {
         }
     }
 
-    /* إنشاء كلاسات لربط الحركة */
     .animate-accordion-down {
         animation: accordion-down 0.2s ease-out;
     }
