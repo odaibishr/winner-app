@@ -1,5 +1,6 @@
 import SectionHeader from "../components/SectionHeader.jsx";
 import FormSection from "../components/FormSection.jsx";
+import FAQsSection from "../components/FAQsSection.jsx";
 
 const Contact = () => {
     return (
@@ -11,6 +12,7 @@ const Contact = () => {
                 />
             </div>
             <FormSection />
+            <FAQsSection />
         </main>
     );
 }
