@@ -74,4 +74,35 @@ html {
 	.section-border {
 		@apply border border-b-white md:shadow-2xl shadow-lg shadow-white/50;
 	}
+
+    @keyframes accordion-down {
+        from {
+            height: 0;
+        }
+        to {
+            height: var(--radix-accordion-content-height);
+        }
+    }
+
+    /* تعريف حركة الإغلاق */
+    @keyframes accordion-up {
+        from {
+            height: var(--radix-accordion-content-height);
+        }
+        to {
+            height: 0;
+        }
+    }
+
+    /* إنشاء كلاسات لربط الحركة */
+    .animate-accordion-down {
+        animation: accordion-down 0.2s ease-out;
+    }
+
+    .animate-accordion-up {
+        animation: accordion-up 0.2s ease-out;
+    }
 }
+
+
+

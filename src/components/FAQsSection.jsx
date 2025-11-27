@@ -5,7 +5,7 @@ import {
     AccordionTrigger,
     AccordionContent,
 } from "./ui/accordion.jsx";
-import {ChevronLeft} from "lucide-react";
+import {faqsItems} from "../data/constant.js";
 
 
 
@@ -15,19 +15,20 @@ const FAQsSection = () => {
             <SectionHeader title="الأسئلة الشائعة؟؟" description="إجابات سريعة على الأسئلة الأكثر شيوعاً" />
 
            <AccordionProvider type="single" collapsible>
-               <AccordionItem value='item-1'>
-                   <AccordionTrigger className="flex ">
-                       <ChevronLeft />
-                       <span className="text-2xl">
-                           العنصر الأول
-                       </span>
-                   </AccordionTrigger>
-
-                   <AccordionContent>
-                       هذا هو محتوى العنصر الأول.
-                   </AccordionContent>
-               </AccordionItem>
+               {
+                   faqsItems.map((item) => (
+                       <AccordionItem key={item.index} value={`item-${item.id+1}`} className="mb-4">
+                           <AccordionTrigger className="flex items-center">
+                               <span className="text-secondary text-xl md:text-2xl">{item.title}</span>
+                           </AccordionTrigger>
+                           <AccordionContent className="text-lg">
+                               {item.answer}
+                           </AccordionContent>
+                       </AccordionItem>
+                   ))
+               }
            </AccordionProvider>
+
         </section>
     );
 }

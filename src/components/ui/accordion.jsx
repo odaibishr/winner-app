@@ -1,85 +1,52 @@
-import { Accordion } from "radix-ui";
-import { cn } from '/src/lib/utils.js';
-import { motion, AnimatePresence } from 'framer-motion';
+import * as Accordion from "@radix-ui/react-accordion";
+import { cn } from '/src/lib/utils.js'
+import { ChevronLeft } from "lucide-react";
 
-const AccordionProvider = ({
-                               children,
-                               className,
-                               type = 'single',
-                               collapsible = true,
-                               value,
-                               onValueChange
-                           }) => {
-    return (
-        <Accordion.Root
-            type={type}
-            collapsible={collapsible}
-            value={value}
-            onValueChange={onValueChange}
-            className={cn('space-y-2', className)}
-        >
-            {children}
-        </Accordion.Root>
-    )
-}
+const AccordionProvider = ({ children, className, ...props }) => (
+    <Accordion.Root className={cn('space-y-2', className)} {...props}>
+        {children}
+    </Accordion.Root>
+);
 
-const AccordionItem = ({
-                           value,
-                           children,
-                           className,
-                       }) => {
-    return (
-        <Accordion.Item
-            value={value}
-            className={cn(
-                'border border-gray-200 bg-white rounded-2xl transition-all duration-300 shadow-sm hover:shadow-md',
-                className
-            )}
-        >
-            {children}
-        </Accordion.Item>
-    );
-}
+const AccordionItem = ({ children, className, ...props }) => (
+    <Accordion.Item className={cn('border border-gray-200 bg-white rounded-2xl overflow-hidden', className)} {...props}>
+        {children}
+    </Accordion.Item>
+);
 
-const AccordionTrigger = ({
-                              children,
-                              className
-                          }) => {
+
+const AccordionTrigger = ({ children, className }) => {
     return (
-        <Accordion.Header>
+        <Accordion.Header className="flex">
             <Accordion.Trigger
                 className={cn(
-                    'w-full py-3 px-4 text-left font-medium cursor-pointer rounded-xl transition-all duration-300 hover:bg-gray-100 data-[state=open]:bg-gray-200',
+                    'group flex flex-1 items-center justify-between w-full py-3 px-4 transition-all hover:bg-gray-50',
                     className
                 )}
             >
-                {children}
+                <span className="font-medium text-gray-900">{children}</span>
+                <ChevronLeft
+                    className="h-5 w-5 text-gray-500 transition-transform duration-200 group-data-[state=open]:-rotate-90"
+                    aria-hidden
+                />
             </Accordion.Trigger>
         </Accordion.Header>
     );
 }
 
-const AccordionContent = ({
-                              children,
-                              className
-                          }) => {
-    const MotionDiv = motion.div;
+const AccordionContent = ({ children, className }) => {
     return (
-        <Accordion.Content asChild>
-            <AnimatePresence initial={false}>
-                <MotionDiv
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }} // easing smooth
-                    className={cn(
-                        'px-4 py-3 text-gray-600 overflow-hidden',
-                        className
-                    )}
-                >
-                    {children}
-                </MotionDiv>
-            </AnimatePresence>
+        <Accordion.Content
+            className={cn(
+                'overflow-hidden text-sm',
+                'data-[state=closed]:animate-accordion-up',
+                'data-[state=open]:animate-accordion-down',
+                className
+            )}
+        >
+            <div className="px-4 pb-4 pt-0 text-gray-500">
+                {children}
+            </div>
         </Accordion.Content>
     );
 }
