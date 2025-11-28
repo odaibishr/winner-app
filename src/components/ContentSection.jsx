@@ -1,11 +1,10 @@
-
-const ContentSection = ({data}) => {
+const ContentSection = ({ data }) => {
 	return (
 		<div className="green-gradient md:py-13 px-10 py-10 flex flex-col items-center justify-center  gap-10 rounded-[100px]">
-			<div className="flex flex-col items-center gap-10">
+			<div className="flex flex-col items-start gap-10">
 				{data.map((content) => (
-					<div key={content.id} className="text-center md:w-[70%] w-[90%]">
-						<h2 className="text-primary md:text-4xl text-2xl md:mt-13 mt-10 font-medium">
+					<div key={content.id} className="container">
+						<h2 className="text-primary text-center md:text-4xl text-2xl md:mt-13 mt-10 font-medium">
 							{content.id + ". " + content.title}
 						</h2>
 						<p className="text-white md:text-3xl text-xl md:mt-12 mt-10 mb-2 leading-relaxed">

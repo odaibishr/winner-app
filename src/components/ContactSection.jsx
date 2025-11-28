@@ -1,23 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import PrimaryButton from "./PrimaryButton";
+import { useLocation } from "react-router-dom";
 
 const ContactSection = () => {
+	const location = useLocation();
 	return (
-		<div className="md:py-12 py-6 flex flex-col items-center text-center">
+		<div className="md:py-12 py-6 flex flex-col items-center text-center md:gap-11 gap-6">
 			<h2 className="text-primary md:text-4xl text-2xl font-medium">
-				هل لديك أسئلة حول سياسة الخصوصية؟
+				هل لديك أسئلة حول{" "}
+				{location.pathname === "/privacy-policy"
+					? "سياسة الخصوصية"
+					: "شروط الخدمة"}
+				؟
 			</h2>
-			<p className="text-white md:text-3xl text-xl font-medium md:mt-11 mt-6">
+			<p className="text-white md:text-3xl text-xl font-medium">
 				فريقنا جاهز للإجابة على جميع استفساراتك
 			</p>
 
-			<Link
-				to="/contact"
-				className="h-12 w-52 mt-12 flex items-center gap-2 icon-text-hover cursor-pointer bg-primary/20 backdrop-blur-2xl md:icon-text-hover rounded-full justify-center [box-shadow:inset_-15px_15px_15px_rgba(255,255,255,0.20),inset_15px_-15px_15px_rgba(193,166,78,0.20)]"
-			>
-				<img src="./light-connect.svg" alt="light-connect" className="w-10 h-10" />
-				<span className="text-white md:text-2xl text-xl">تواصل معنا</span>
-			</Link>
+			<div className="space-y-4">
+				<PrimaryButton
+					title="تواصل معنا"
+					icon="./light-connect.svg"
+					link="/contact"
+				/>
+				{location.pathname === "/privacy-policy" ? (
+					<PrimaryButton
+						title="شروط الخدمة"
+						icon="./shield-lock.svg"
+						link="/terms-of-service"
+					/>
+				) : (
+					<PrimaryButton
+						title="سياسة الخصوصية"
+						icon="./shield-lock.svg"
+						link="/privacy-policy"
+					/>
+				)}
+			</div>
 		</div>
 	);
 };
