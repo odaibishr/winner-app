@@ -20,7 +20,6 @@ const Navbar = () => {
 		};
 	}, [location, isMenuOpen]);
 
-	// منع التمرير عند فتح القائمة
 	useEffect(() => {
 		if (isMenuOpen) {
 			document.body.style.overflow = "hidden";
@@ -89,7 +88,7 @@ const Navbar = () => {
 						>
 							<span
 								className="text-amber-300 text-2xl md:text-3xl font-medium 
-                transition-all duration-300 ease-out group-hover:text-amber-200
+                transition-all duration-300 ease-out group-hover:text-primary
                 md:group-hover:opacity-0 md:group-hover:-translate-x-4"
 							>
 								Winner
@@ -98,7 +97,7 @@ const Navbar = () => {
 								className="w-8 h-8 md:w-12 md:h-12 rounded-[10px] border border-orange-300 
                   transition-all duration-300 ease-out 
                   group-hover:scale-110 group-hover:border-orange-200
-                  md:group-hover:-translate-x-16"
+                  md:group-hover:translate-x-16"
 								src="/logo.svg"
 								alt="Winner Logo"
 							/>
@@ -186,7 +185,7 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				{/* Mobile Menu - يظهر من أسفل الـ Header */}
+				{/* Mobile Menu */}
 				<div
 					className={`lg:hidden absolute top-full left-0 right-0 
             bg-black/95 backdrop-blur-xl border-b border-primary/20
