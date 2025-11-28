@@ -1,173 +1,322 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { menuItems } from "../data/constant.js";
 import MenuItem from "./MenuItem";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [isAnimating, setIsAnimating] = useState(false);
+	const location = useLocation();
 
-	const toggleMenu = () => {
-		setIsMenuOpen(!isMenuOpen);
+	const handleCloseMenu = () => {
+		setIsMenuOpen(false);
 	};
 
 	useEffect(() => {
+		() => {
+			handleCloseMenu();
+		};
+	}, [location, isMenuOpen]);
+
+	// منع التمرير عند فتح القائمة
+	useEffect(() => {
+		if (isMenuOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "unset";
+		}
+		return () => {
+			document.body.style.overflow = "unset";
+		};
+	}, [isMenuOpen]);
+
+	const toggleMenu = useCallback(() => {
+		if (!isAnimating) {
+			setIsAnimating(true);
+			setIsMenuOpen((prev) => !prev);
+			setTimeout(() => setIsAnimating(false), 300);
+		}
+	}, [isAnimating]);
+
+	useEffect(() => {
+		let ticking = false;
+
 		const handleScroll = () => {
-			if (window.scrollY > 0) {
-				setIsScrolled(true);
-			} else {
-				setIsScrolled(false);
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					setIsScrolled(window.scrollY > 10);
+					ticking = false;
+				});
+				ticking = true;
 			}
 		};
 
-		window.addEventListener("scroll", handleScroll);
-
-		return () => {
-			window.removeEventListener("scroll", handleScroll);
-		};
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
+	useEffect(() => {
+		const handleEscape = (e) => {
+			if (e.key === "Escape" && isMenuOpen) {
+				setIsMenuOpen(false);
+			}
+		};
+		window.addEventListener("keydown", handleEscape);
+		return () => window.removeEventListener("keydown", handleEscape);
+	}, [isMenuOpen]);
+
 	return (
-		<header
-			className={`w-full container fixed top-0 left-0 right-0 z-50 ${
-				isScrolled
-					? "md:mt-2 md:rounded-full md:border max-sm:border-b border-primary/50 transition-all duration-300 ease-in-out bg-black backdrop-blur-2xl "
-					: ""
-			}`}
-		>
-			<div className={`flex c p-4 justify-between items-center`}>
-				{/* Logo */}
-				<Link
-					to="/"
-					className="w-[120px] h-12 flex items-center gap-2 group transition-all duration-300 ease-in-out cursor-pointer"
-				>
-					<div className="left-[58px] top-0 text-center justify-start text-amber-300 text-2xl md:text-3xl font-medium md:group-hover:hidden transition-all duration-300 ease-in-out md:group-hover:translate-x-2">
-						Winner
-					</div>
-					<img
-						className="w-8 h-8 md:w-12 md:h-12 rounded-[10px] border border-orange-300 transition-all duration-300 ease-in-out md:group-hover:translate-x-2"
-						src="/logo.svg"
-						alt="logo"
-					/>
-				</Link>
-
-				{/* Menu Items Desktop */}
-				<div className="hidden lg:flex items-center gap-x-6">
-					{menuItems.map((item, index) => (
-						<MenuItem key={index} item={item} />
-					))}
-				</div>
-
-				{/* Buttons Desktop */}
-				<div className="hidden lg:flex items-center gap-6">
-					<div className="w-[180px] h-12 bg-linear-to-b from-yellow-700 to-yellow-950 rounded-[10px] icon-text-hover flex items-center justify-center gap-2">
-						<img className="" src="/download.svg" alt="download" />
-						<span className="text-white">تحميل التطبيق</span>
-					</div>
-
-					<Link
-						to="/login"
-						className="flex items-center gap-2 h-12 w-[180px] rounded-[10px] border-2 border-primary  icon-text-hover p-[2px] text-primary"
-					>
-						<div className="flex items-center gap-2 w-full h-full justify-center rounded-[8px]">
-							<img src="/login.svg" alt="login" />
-							<span>دخول الإدارة</span>
-						</div>
-					</Link>
-				</div>
-
-				{/* Button Menu */}
-				<button
-					className="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1 z-60"
-					onClick={toggleMenu}
-				>
-					<span
-						className={`block w-6 h-0.5 bg-amber-300 transition-all duration-300 ${
-							isMenuOpen ? "-rotate-45 translate-y-1.5 " : ""
-						}`}
-					></span>
-					<span
-						className={`block w-6 h-0.5 bg-amber-300 transition-all duration-300 ${
-							isMenuOpen ? "rotate-45 translate-y-1.5 hidden " : ""
-						}`}
-					></span>
-				</button>
-
-				{/* Overlay */}
-				{isMenuOpen && (
+		<>
+			<header
+				className={`w-full container fixed top-0 left-0 right-0 z-50 ${
+					isScrolled || isMenuOpen
+						? "md:mt-2 md:rounded-full md:border max-sm:border-b border-primary/50 transition-all duration-300 ease-in-out bg-black backdrop-blur-2xl "
+						: ""
+				}`}
+			>
+				<div className="container mx-auto">
 					<div
-						className="fixed inset-0 bg-black/50 bg-opacity-30 z-40 lg:hidden"
-						onClick={() => setIsMenuOpen(false)}
-					></div>
-				)}
-
-				{/* Navbar Mobile */}
-				<div
-					className={`lg:hidden fixed top-0 left-0 right-0 bg-black shadow-lg transition-all duration-300 ease-in-out z-50 ${
-						isMenuOpen
-							? "opacity-100 visible translate-y-0"
-							: "opacity-0 invisible -translate-y-full"
-					}`}
-				>
-					{/*  Logo Mobile */}
-					<div className="flex justify-between items-center p-4 border-b border-primary">
+						className={`flex p-4 justify-between items-center transition-all duration-300
+              ${isScrolled ? "py-3" : "py-4"}`}
+					>
+						{/* Logo */}
 						<Link
 							to="/"
-							className="w-[120px] h-12 flex items-center gap-2 group transition-all duration-300 ease-in-out cursor-pointer"
+							className="flex items-center gap-2 group transition-all duration-300 ease-out cursor-pointer z-50"
 							onClick={() => setIsMenuOpen(false)}
 						>
-							<div className="text-amber-300 text-3xl font-medium">Winner</div>
+							<span
+								className="text-amber-300 text-2xl md:text-3xl font-medium 
+                transition-all duration-300 ease-out group-hover:text-amber-200
+                md:group-hover:opacity-0 md:group-hover:-translate-x-4"
+							>
+								Winner
+							</span>
 							<img
-								className="w-12 h-12 rounded-[10px] border border-primary"
+								className="w-8 h-8 md:w-12 md:h-12 rounded-[10px] border border-orange-300 
+                  transition-all duration-300 ease-out 
+                  group-hover:scale-110 group-hover:border-orange-200
+                  md:group-hover:-translate-x-16"
 								src="/logo.svg"
-								alt="logo"
+								alt="Winner Logo"
 							/>
 						</Link>
 
-						<button
-							className="flex flex-col justify-center items-center w-10 h-10 space-y-1"
-							onClick={toggleMenu}
-						>
-							<span className="block w-6 h-0.5 bg-primary rotate-45 translate-y-1.5"></span>
-							{/* <span className="block w-6 h-0.5 bg-amber-300 -rotate-45 -translate-y-1.5"></span> */}
-						</button>
-					</div>
+						{/* Menu Items Desktop */}
+						<nav className="hidden lg:flex items-center gap-x-6">
+							{menuItems.map((item, index) => (
+								<div
+									key={index}
+									className="transform transition-all duration-300 hover:-translate-y-0.5"
+									style={{ transitionDelay: `${index * 50}ms` }}
+								>
+									<MenuItem item={item} />
+								</div>
+							))}
+						</nav>
 
-					<div className="flex flex-col p-4 space-y-4 max-h-[80vh] overflow-y-auto">
-						{/* Menu Items Mobile */}
-						{menuItems.map((item, index) => (
+						{/* Buttons Desktop */}
+						<div className="hidden lg:flex items-center gap-4">
 							<Link
-								key={index}
-								to={item.link}
-								className="text-primary text-xl font-medium py-3 px-4 hover:bg-primary hover:text-black rounded-[8px] transition-all duration-300 text-center"
-								onClick={() => setIsMenuOpen(false)}
+								to="/login"
+								className="group relative w-[180px] h-12 green-gradient 
+                  rounded-[10px] flex items-center justify-center gap-2 overflow-hidden
+                  transition-all duration-300 
+                 "
 							>
-								{item.name}
+								<img
+									className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
+									src="/download.svg"
+									alt=""
+								/>
+								<span className="text-white font-medium">تحميل التطبيق</span>
 							</Link>
-						))}
-
-						{/* Buttons Mobile */}
-						<div className="flex flex-col gap-4 mt-4">
-							<div className="w-full h-12 bg-linear-to-b from-yellow-700 to-yellow-950 rounded-[10px] icon-text-hover flex items-center justify-center gap-2">
-								<img className="" src="/download.svg" alt="download" />
-								<span className="text-white">تحميل التطبيق</span>
-							</div>
 
 							<Link
 								to="/login"
-								className="flex items-center gap-2 h-12 w-full rounded-[10px] border-2 border-primary icon-text-hover p-[2px] text-primary"
-								onClick={() => setIsMenuOpen(false)}
+								className="group relative flex items-center gap-2 h-12 w-[180px] rounded-[10px] 
+                  border-2 border-primary overflow-hidden transition-all duration-300
+                  hover:border-primary/80 hover:shadow-lg hover:shadow-primary/20"
 							>
-								<div className="flex items-center gap-2 w-full h-full justify-center rounded-[8px]">
-									<img src="/login.svg" alt="login" />
-									<span>دخول الإدارة</span>
+								<span
+									className="absolute inset-0 bg-primary/10 scale-x-0 group-hover:scale-x-100 
+                  transition-transform duration-300 origin-left"
+								/>
+								<div className="relative flex items-center gap-2 w-full h-full justify-center">
+									<img
+										src="/login.svg"
+										alt=""
+										className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
+									/>
+									<span className="text-primary font-medium">دخول الإدارة</span>
 								</div>
 							</Link>
 						</div>
+
+						{/* Mobile Menu Button */}
+						<button
+							className="lg:hidden relative z-50 w-12 h-12 flex items-center justify-center
+                rounded-full transition-all duration-300 ease-out
+                hover:bg-primary/10 active:scale-95"
+							onClick={toggleMenu}
+							aria-label={isMenuOpen ? "إغلاق القائمة" : "فتح القائمة"}
+							aria-expanded={isMenuOpen}
+						>
+							<div className="relative w-6 h-6">
+								<Menu
+									className={`absolute inset-0 w-6 h-6 text-primary transition-all duration-300
+                    ${
+											isMenuOpen
+												? "opacity-0 rotate-180 scale-50"
+												: "opacity-100 rotate-0 scale-100"
+										}`}
+								/>
+								<X
+									className={`absolute inset-0 w-6 h-6 text-primary transition-all duration-300
+                    ${
+											isMenuOpen
+												? "opacity-100 rotate-0 scale-100"
+												: "opacity-0 -rotate-180 scale-50"
+										}`}
+								/>
+							</div>
+						</button>
 					</div>
 				</div>
-			</div>
-		</header>
+
+				{/* Mobile Menu - يظهر من أسفل الـ Header */}
+				<div
+					className={`lg:hidden absolute top-full left-0 right-0 
+            bg-black/95 backdrop-blur-xl border-b border-primary/20
+            transition-all duration-500 ease-out origin-top
+            ${
+							isMenuOpen
+								? "opacity-100 visible translate-y-0 scale-y-100"
+								: "opacity-0 invisible -translate-y-4 scale-y-95"
+						}`}
+					style={{
+						maxHeight: isMenuOpen ? "calc(100vh - 80px)" : "0",
+						transitionProperty: "all, max-height",
+					}}
+				>
+					<nav className="container mx-auto px-4 py-6 overflow-y-auto max-h-[calc(100vh-100px)]">
+						{/* Menu Items */}
+						<div className="space-y-2">
+							{menuItems.map((item, index) => (
+								<Link
+									to={item.link}
+									key={index}
+									className={`transform transition-all duration-500 ease-out
+                    ${
+											isMenuOpen
+												? "opacity-100 translate-y-0 translate-x-0"
+												: "opacity-0 -translate-y-4 translate-x-4"
+										}`}
+									style={{
+										transitionDelay: isMenuOpen
+											? `${index * 80 + 100}ms`
+											: "0ms",
+									}}
+									onClick={() => setIsMenuOpen(false)}
+								>
+									<div
+										className={`block p-4 rounded-xl mb-2 bg-white/5 hover:bg-primary/10 
+                    border border-transparent hover:border-primary/30
+                    transition-all duration-300 active:scale-98 cursor-pointer ${
+											location.pathname === item.link
+												? "text-white"
+												: "text-primary"
+										}`}
+									>
+										{item.name}
+									</div>
+								</Link>
+							))}
+						</div>
+
+						{/* Divider */}
+						<div
+							className={`my-6 h-px bg-linear-gradient-to-r from-transparent via-primary/30 to-transparent
+                transition-all duration-700 ease-out
+                ${
+									isMenuOpen ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+								}`}
+							style={{ transitionDelay: isMenuOpen ? "400ms" : "0ms" }}
+						/>
+
+						{/* Buttons */}
+						<div className="space-y-4">
+							<Link
+								to="/login"
+								className={`group relative w-full h-14 green-gradient
+                  rounded-xl flex items-center justify-center gap-3 overflow-hidden
+                  transition-all duration-500 ease-out active:scale-98
+                  ${
+										isMenuOpen
+											? "opacity-100 translate-y-0"
+											: "opacity-0 translate-y-4"
+									}`}
+								style={{ transitionDelay: isMenuOpen ? "500ms" : "0ms" }}
+							>
+								<img
+									className="w-6 h-6 transition-transform duration-300 group-hover:bounce"
+									src="/download.svg"
+									alt=""
+								/>
+								<span className="text-white font-semibold text-lg">
+									تحميل التطبيق
+								</span>
+							</Link>
+
+							<Link
+								to="/login"
+								className={`group relative flex items-center gap-3 h-14 w-full rounded-xl 
+                  border-2 border-primary overflow-hidden
+                  transition-all duration-500 ease-out active:scale-98
+                  hover:shadow-lg hover:shadow-primary/20
+                  ${
+										isMenuOpen
+											? "opacity-100 translate-y-0"
+											: "opacity-0 translate-y-4"
+									}`}
+								style={{ transitionDelay: isMenuOpen ? "600ms" : "0ms" }}
+								onClick={() => setIsMenuOpen(false)}
+							>
+								<span
+									className="absolute inset-0 bg-primary/10 scale-x-0 group-hover:scale-x-100 
+                  transition-transform duration-300 origin-center"
+								/>
+								<div className="relative flex items-center gap-3 w-full h-full justify-center">
+									<img
+										src="/login.svg"
+										alt=""
+										className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"
+									/>
+									<span className="text-primary font-semibold text-lg">
+										دخول الإدارة
+									</span>
+								</div>
+							</Link>
+						</div>
+					</nav>
+				</div>
+			</header>
+
+			{/* Overlay */}
+			<div
+				className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden
+          transition-all duration-500 ease-out
+          ${
+						isMenuOpen
+							? "opacity-100 visible"
+							: "opacity-0 invisible pointer-events-none"
+					}`}
+				onClick={() => setIsMenuOpen(false)}
+				aria-hidden="true"
+			/>
+		</>
 	);
 };
 

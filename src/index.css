@@ -5,13 +5,14 @@
 	--font-sans: "Cairo";
 	--color-orange: #ecc671;
 	--color-primary: #fedb67;
-	--color-secondary: #9E7900;
-    --radix-accordion-content-height: 2.5rem;
+	--color-secondary: #9e7900;
+	--radix-accordion-content-height: 2.5rem;
 }
 
 html {
 	direction: rtl;
-    font-family: var(--font-sans), sans-serif;
+	/* background-color: black; */
+	font-family: var(--font-sans), sans-serif;
 }
 
 @layer utilities {
@@ -69,39 +70,36 @@ html {
 	}
 
 	.green-gradient {
-		@apply bg-linear-to-b from-secondary/50	 to-[#382B00]/50 shadow-[0px_4px_4px_0px_rgba(255,255,255,0.25)];
+		@apply bg-linear-to-b from-secondary/50	 to-[#382B00]/50;
 	}
 
 	.section-border {
 		@apply border border-b-white md:shadow-2xl shadow-lg shadow-white/50;
 	}
 
-    @keyframes accordion-down {
-        from {
-            height: 0;
-        }
-        to {
-            height: var(--radix-accordion-content-height);
-        }
-    }
+	@keyframes accordion-down {
+		from {
+			height: 0;
+		}
+		to {
+			height: var(--radix-accordion-content-height);
+		}
+	}
 
-    @keyframes accordion-up {
-        from {
-            height: var(--radix-accordion-content-height);
-        }
-        to {
-            height: 0;
-        }
-    }
+	@keyframes accordion-up {
+		from {
+			height: var(--radix-accordion-content-height);
+		}
+		to {
+			height: 0;
+		}
+	}
 
-    .animate-accordion-down {
-        animation: accordion-down 0.2s ease-out;
-    }
+	.animate-accordion-down {
+		animation: accordion-down 0.2s ease-out;
+	}
 
-    .animate-accordion-up {
-        animation: accordion-up 0.2s ease-out;
-    }
+	.animate-accordion-up {
+		animation: accordion-up 0.2s ease-out;
+	}
 }
-
-
-
