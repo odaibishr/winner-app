@@ -13,7 +13,7 @@ const HeroSection = () => {
 			></div>
 
 			{/* Gradient Overlay */}
-			<div className="absolute inset-0 bg-linear-to-bl -start-200 from-secondary to-[#000000] opacity-90"></div>
+			<div className="absolute inset-0 bg-linear-to-bl -start-200 from-secondary/50 to-[#000000]/90"></div>
 
 			{/* Content */}
 			<div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
@@ -39,7 +39,11 @@ const HeroSection = () => {
 						link="/download"
 					/>
 
-					<OutlineButton title="اعرف المزيد" link="/about" icon='/more-down.svg'/>
+					<OutlineButton
+						title="اعرف المزيد"
+						link="/about"
+						icon="/more-down.svg"
+					/>
 				</div>
 				{/* Stats Inside Background */}
 				<div className="relative z-10 md:mt-20 mt-5">
