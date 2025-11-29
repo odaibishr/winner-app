@@ -132,26 +132,6 @@ const Navbar = () => {
 								/>
 								<span className="text-white font-medium">تحميل التطبيق</span>
 							</Link>
-
-							<Link
-								to="/login"
-								className="group relative flex items-center gap-2 h-12 w-[180px] rounded-[10px] 
-                  border-2 border-primary overflow-hidden transition-all duration-300
-                  hover:border-primary/80 hover:shadow-lg hover:shadow-primary/20"
-							>
-								<span
-									className="absolute inset-0 bg-primary/10 scale-x-0 group-hover:scale-x-100 
-                  transition-transform duration-300 origin-left"
-								/>
-								<div className="relative flex items-center gap-2 w-full h-full justify-center">
-									<img
-										src="/login.svg"
-										alt=""
-										className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
-									/>
-									<span className="text-primary font-medium">دخول الإدارة</span>
-								</div>
-							</Link>
 						</div>
 
 						{/* Mobile Menu Button */}
@@ -267,36 +247,6 @@ const Navbar = () => {
 								<span className="text-white font-semibold text-lg">
 									تحميل التطبيق
 								</span>
-							</Link>
-
-							<Link
-								to="/login"
-								className={`group relative flex items-center gap-3 h-14 w-full rounded-xl 
-                  border-2 border-primary overflow-hidden
-                  transition-all duration-500 ease-out active:scale-98
-                  hover:shadow-lg hover:shadow-primary/20
-                  ${
-										isMenuOpen
-											? "opacity-100 translate-y-0"
-											: "opacity-0 translate-y-4"
-									}`}
-								style={{ transitionDelay: isMenuOpen ? "600ms" : "0ms" }}
-								onClick={() => setIsMenuOpen(false)}
-							>
-								<span
-									className="absolute inset-0 bg-primary/10 scale-x-0 group-hover:scale-x-100 
-                  transition-transform duration-300 origin-center"
-								/>
-								<div className="relative flex items-center gap-3 w-full h-full justify-center">
-									<img
-										src="/login.svg"
-										alt=""
-										className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12"
-									/>
-									<span className="text-primary font-semibold text-lg">
-										دخول الإدارة
-									</span>
-								</div>
 							</Link>
 						</div>
 					</nav>
