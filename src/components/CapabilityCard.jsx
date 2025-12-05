@@ -4,7 +4,7 @@ const CapabilityCard = ({ icon, title, description }) => {
 	return (
 		<div className="group">
 			<div
-				className="flex flex-col gap-3 w-[380px] h-[126px] justify-center items-center py-5 px-6 bg-white rounded-4xl
+				className="flex flex-col gap-3 w-[320px] md:w-[350px] h-[126px] justify-center items-center py-5 px-6 bg-white rounded-4xl
 			                transition-all duration-300 ease-out
 			                group-hover:bg-secondary group-hover:scale-0.5"
 			>
@@ -25,7 +25,7 @@ const CapabilityCard = ({ icon, title, description }) => {
 					/>
 
 					<span
-						className="text-secondary text-2xl md:text-3xl
+						className="text-secondary text-xl md:text-3xl
 					                 transition-colors duration-300 ease-out
 					                 group-hover:text-white"
 					>
@@ -34,7 +34,7 @@ const CapabilityCard = ({ icon, title, description }) => {
 				</div>
 
 				<p
-					className="text-black/60 text-md
+					className="text-black/60 text-center text-md
 				              transition-all duration-300 ease-out
 				              group-hover:text-white/70 group-hover:text-sm"
 				>
